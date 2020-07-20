@@ -10,14 +10,14 @@ iet:
 section .text
 intr%1:
 	%2
-;	push intp
-;	call puts
+	push intp
+	call puts
 	push %1
 	add esp,4
 	mov al,0x20
 	out 0xa0,al
 	out 0x20,al
-;	add esp,4
+	add esp,8
 	iret
 section .data
 	dd intr%1
